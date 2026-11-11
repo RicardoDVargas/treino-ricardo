@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Manual Treino Ricardo</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root{color-scheme:dark}
+body{max-width:980px;margin:0 auto;padding:48px 24px 80px;background:#0f0826 radial-gradient(800px 500px at 90% -10%,rgba(139,92,246,.28),transparent 60%);color:#e6e0fb;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:#fff;line-height:1.15}
+h1{font-size:46px;margin-top:0} h2{font-size:32px;margin-top:2.2em;padding-bottom:.3em;border-bottom:1px solid rgba(242,207,138,.4)} h3{font-size:24px;margin-top:1.8em;color:#f2cf8a}
+a{color:#f2cf8a} code{background:rgba(139,92,246,.2);padding:1px 6px;border-radius:5px;font-size:.92em}
+pre{background:#1a1040;padding:16px;border-radius:12px;overflow:auto} pre code{background:none}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:1em 0;display:block;overflow-x:auto}
+th,td{border:1px solid rgba(185,168,255,.2);padding:8px 12px;text-align:left} th{background:rgba(139,92,246,.2)}
+@media print{body{background:#fff;color:#111;padding:0}h1,h2,h3{color:#111}h3{color:#555}a{color:#111}th{background:#eee}th,td{border-color:#ccc}code,pre{background:#f3f3f3}}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Manual Treino Ricardo</h1>
+</header>
+<h1 id="treino-ricardo-documentação-completa">Treino Ricardo —
+documentação completa</h1>
+<p>Versão arquivada em 10/11/2026. Código de origem:
+79415d2e7ae3fa041576fe6555cb3cd04a6ec8dd.</p>
+<p>Revisão visual aplicada em 10/11/2026 sobre esse código: tema
+galáctico, novo layout, 29 ilustrações redesenhadas e marcação de
+exercícios concluídos. A rotina (dias, exercícios, séries e pausas) não
+foi alterada. Os detalhes estão na seção 12.</p>
+<h2 id="objetivo-e-decisões-do-projeto">1. Objetivo e decisões do
+projeto</h2>
+<p>Transformar a rotina de treino em um app web simples, acessível pelo
+celular e adicionável à tela inicial. A rotina distribui os grupos ao
+longo da semana e repete peito/bíceps e costas/tríceps em três dias. A
+estrutura evoluiu para seis exercícios e, na revisão final, sete por
+sessão, com liberdade para selecionar a composição.</p>
+<p>A configuração final utiliza três exercícios do bloco principal e
+dois de cada um dos dois blocos secundários. Nos dias de segunda a
+sábado, são três séries em cada exercício principal e duas em cada
+secundário: 17 séries por sessão. No domingo, todos recebem duas séries:
+14 séries. O domingo é opcional e leve.</p>
+<p>O alvo de duração é aproximadamente 55–60 minutos, incluindo oito
+minutos de aquecimento, cerca de 42–47 minutos de exercícios, pausas e
+trocas, e até cinco minutos de volta à calma. É uma estimativa, sem
+garantia de duração exata. Não é necessário prolongar uma sessão
+concluída antes.</p>
+<p>A interface orienta deixar 2–3 repetições em reserva, ou 3–4 nos
+blocos leves. Os avisos de boxe e recuperação estão transcritos nos
+respectivos dias. Este arquivo documenta a rotina configurada; não
+representa nova avaliação física.</p>
+<h2 id="distribuição-semanal-e-execução-completa">2. Distribuição
+semanal e execução completa</h2>
+<p>Os números entre parênteses nos títulos representam a quantidade de
+exercícios, não de séries. A ordem abaixo é a ordem exibida no app.
+Descansos são dados em segundos.</p>
+<h3 id="segunda-peito-3-bíceps-2-ombros-2">Segunda — Peito (3) + bíceps
+(2) + ombros (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Supino reto (máquina ou barra)</td>
+<td>3 × 6–10</td>
+<td>120 s</td>
+<td>press.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Supino inclinado (máquina ou halteres)</td>
+<td>3 × 8–12</td>
+<td>90 s</td>
+<td>incline.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Peck deck / voador</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>peck.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Rosca Scott (máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>scott.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Rosca direta (halteres ou máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>curl.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Elevação lateral na polia</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>lateral.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Crucifixo inverso / peck deck inverso</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>reverse.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="terça-costas-3-tríceps-2-posterior-2">Terça — Costas (3) +
+tríceps (2) + posterior (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<p>Boxe 18h30–19h30 · Academia às 20h. Mantenha os blocos secundários
+leves após o boxe; reduza a carga se estiver cansado.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Puxada alta pronada</td>
+<td>3 × 8–12</td>
+<td>90 s</td>
+<td>pull.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Remada baixa (máquina)</td>
+<td>3 × 10–12</td>
+<td>90 s</td>
+<td>row.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Pulldown com braços estendidos</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>pulldown.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Tríceps na corda</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>triceps.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Tríceps francês na polia</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>french.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Mesa flexora</td>
+<td>2 × 10–12</td>
+<td>90 s</td>
+<td>lyingcurl.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Cadeira flexora sentada</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>seatedcurl.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quarta-quadríceps-3-peito-2-bíceps-2">Quarta — Quadríceps (3) +
+peito (2) + bíceps (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<p>Peito e bíceps leves: termine com 3–4 repetições em reserva.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Agachamento no hack ou Smith</td>
+<td>3 × 6–10</td>
+<td>120 s</td>
+<td>squat.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Leg press 45°</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>legpress.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Cadeira extensora</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>extensor.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Peck deck / voador</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>peck.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Crossover na polia média</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>crossover.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Rosca direta (halteres ou máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>curl.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Rosca Scott (máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>scott.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quinta-ombros-3-costas-2-tríceps-2">Quinta — Ombros (3) + costas
+(2) + tríceps (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<p>Se tiver boxe, faça a academia depois da aula. Mantenha os blocos
+secundários leves após o boxe; reduza a carga se estiver cansado.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Desenvolvimento (máquina ou halteres)</td>
+<td>3 × 8–12</td>
+<td>90 s</td>
+<td>shoulder.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Elevação lateral na polia</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>lateral.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Crucifixo inverso / peck deck inverso</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>reverse.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Remada baixa (máquina)</td>
+<td>2 × 10–12</td>
+<td>90 s</td>
+<td>row.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Pulldown com braços estendidos</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>pulldown.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Tríceps na corda</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>triceps.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Tríceps francês na polia</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>french.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sexta-peito-3-bíceps-2-abdômen-2">Sexta — Peito (3) + bíceps (2)
++ abdômen (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Supino inclinado (máquina ou halteres)</td>
+<td>3 × 8–12</td>
+<td>90 s</td>
+<td>incline.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Crossover na polia média</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>crossover.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Peck deck / voador</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>peck.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Rosca direta (halteres ou máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>curl.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Rosca Scott (máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>scott.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Dead bug (alternado)</td>
+<td>2 × 8/lado</td>
+<td>60 s</td>
+<td>deadbug.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Prancha frontal</td>
+<td>2 × 30–45 s</td>
+<td>60 s</td>
+<td>plank.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sábado-posterior-e-glúteos-3-costas-2-tríceps-2">Sábado —
+Posterior e glúteos (3) + costas (2) + tríceps (2)</h3>
+<p>Duração exibida: 55–60 min.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Terra romeno (barra ou halteres)</td>
+<td>3 × 8–10</td>
+<td>120 s</td>
+<td>rdl.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Elevação pélvica / hip thrust</td>
+<td>3 × 8–12</td>
+<td>90 s</td>
+<td>hip.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Cadeira flexora sentada</td>
+<td>3 × 12–15</td>
+<td>90 s</td>
+<td>seatedcurl.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Remada cavalinho (máquina)</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>cavalinho.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Puxada alta pronada</td>
+<td>2 × 8–12</td>
+<td>90 s</td>
+<td>pull.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Tríceps na corda</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>triceps.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Tríceps francês na polia</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>french.svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="domingo-pernas-leves-3-panturrilha-2-abdômen-2">Domingo — Pernas
+leves (3) + panturrilha (2) + abdômen (2)</h3>
+<p>Duração exibida: Até 55–60 min.</p>
+<p>Sessão opcional e leve, com 2 séries por exercício. Se a recuperação
+estiver incompleta, use o domingo para descansar.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordem</th>
+<th>Exercício</th>
+<th>Séries × repetições/tempo</th>
+<th>Descanso</th>
+<th>Imagem SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Leg press 45°</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>legpress.svg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Cadeira extensora</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>extensor.svg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Cadeira adutora</td>
+<td>2 × 12–15</td>
+<td>90 s</td>
+<td>adductor.svg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Panturrilha em pé (máquina)</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>calf.svg</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Panturrilha sentada</td>
+<td>2 × 10–15</td>
+<td>90 s</td>
+<td>seatedcalf.svg</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Dead bug (alternado)</td>
+<td>2 × 8/lado</td>
+<td>60 s</td>
+<td>deadbug.svg</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Prancha lateral</td>
+<td>2 × 25 s/lado</td>
+<td>60 s</td>
+<td>sideplank.svg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="como-usar-o-app-passo-a-passo">3. Como usar o app, passo a
+passo</h2>
+<ol type="1">
+<li>Acesse https://treino-ricardo-semana.orderlycove1.chatgpt.site com a
+conta autorizada.</li>
+<li>O app seleciona inicialmente o dia atual no fuso America/Sao_Paulo.
+Toque em outro dia para consultar sua sessão.</li>
+<li>Leia o grupo, a duração e eventuais observações.</li>
+<li>Faça o aquecimento e siga os sete cartões na ordem apresentada.</li>
+<li>Consulte as séries e repetições de cada cartão.</li>
+<li>Cada cartão mostra a ilustração do movimento (início e fim, com o
+músculo trabalhado em destaque), o nome, as séries × repetições e dois
+botões.</li>
+<li>Toque no botão com os segundos para iniciar o descanso. Um novo
+descanso substitui o anterior. A barra do cronômetro mostra o tempo
+restante.</li>
+<li>Use Pausar/Continuar para controlar o cronômetro; ao zerar, aparece
+“Pode voltar”. Concluir ou o botão de fechar encerra o contador.</li>
+<li>Toque no botão de check do cartão para marcar o exercício como
+concluído. O anel no topo da página mostra quantos exercícios do dia já
+foram feitos.</li>
+<li>Abra “Sobre este treino” para consultar as orientações e o link da
+planilha, e “Como instalar” para ver como adicionar o app à tela
+inicial.</li>
+</ol>
+<p>No computador, a barra lateral lista os sete dias como uma
+constelação, com os grupos de cada dia. No celular, essa lista vira uma
+faixa horizontal no topo, com os dias abreviados. Os exercícios aparecem
+agrupados por bloco: o principal (três exercícios) e os complementares
+(dois exercícios cada).</p>
+<p>O cronômetro usa o horário final salvo no navegador. Ao retornar à
+página, recalcula o restante. Há apenas um cronômetro. A marcação de
+concluídos é salva por dia no aparelho e reinicia na virada do dia (fuso
+America/Sao_Paulo). Não existem registro de cargas, histórico de sessões
+nem alerta sonoro implementados.</p>
+<h2 id="colocar-na-tela-inicial">4. Colocar na tela inicial</h2>
+<h3 id="iphone">iPhone</h3>
+<ol type="1">
+<li>Abra o endereço no Safari e autentique-se, se solicitado.</li>
+<li>Toque em Compartilhar.</li>
+<li>Escolha Adicionar à Tela de Início.</li>
+<li>Confirme o nome e toque em Adicionar.</li>
+<li>Abra pelo ícone criado.</li>
+</ol>
+<h3 id="android">Android</h3>
+<ol type="1">
+<li>Abra o endereço no navegador.</li>
+<li>No menu, procure Instalar app ou Adicionar à tela inicial.</li>
+<li>Confirme. O nome da opção depende do navegador.</li>
+</ol>
+<p>O pacote contém manifesto e ícones de 192 e 512 pixels, além do SVG.
+É um app web, sem pacote de loja de aplicativos.</p>
+<h2 id="arquitetura-e-mapa-de-arquivos">5. Arquitetura e mapa de
+arquivos</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caminho</th>
+<th>Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>app/index.html</td>
+<td>Página, navegação, cartões, diálogo de informações e painel do
+cronômetro</td>
+</tr>
+<tr class="even">
+<td>app/style.css</td>
+<td>Tokens de cor e tipografia do tema galáctico, layout (barra lateral
+no computador, constelação de dias no celular), cartões, cronômetro e
+diálogos</td>
+</tr>
+<tr class="odd">
+<td>app/app.js</td>
+<td>Carregamento do JSON, seleção de dia, renderização, imagens,
+instalação e cronômetro</td>
+</tr>
+<tr class="even">
+<td>app/workouts.json</td>
+<td>Fonte local dos sete treinos e seus exercícios</td>
+</tr>
+<tr class="odd">
+<td>app/sw.js</td>
+<td>Service worker, cache inicial e tentativa de uso sem rede</td>
+</tr>
+<tr class="even">
+<td>app/manifest.webmanifest</td>
+<td>Nome, ícones e configuração do app instalável</td>
+</tr>
+<tr class="odd">
+<td>app/icon.svg e icon-192.png / icon-512.png</td>
+<td>Identidade e ícones (estrela de quatro pontas sobre fundo
+índigo)</td>
+</tr>
+<tr class="even">
+<td>app/images/*.svg</td>
+<td>29 ilustrações de movimentos (início e fim), geradas por
+tools/gerar_ilustracoes.py; fly.svg não é usada na rotina atual</td>
+</tr>
+<tr class="odd">
+<td>app/fonts/</td>
+<td>Cormorant Garamond (títulos e números) e Manrope (interface),
+embutidas para funcionar sem rede</td>
+</tr>
+<tr class="even">
+<td>app/stars.svg</td>
+<td>Fundo estrelado repetido atrás da página</td>
+</tr>
+<tr class="odd">
+<td>tools/</td>
+<td>Geradores das ilustrações (rig.py, gerar_ilustracoes.py), do fundo e
+dos ícones (gerar_assets.py) e teste de navegador opcional
+(teste_navegador.py)</td>
+</tr>
+</tbody>
+</table>
+<p>A aplicação usa HTML, CSS e JavaScript nativos. Não tem dependências
+de execução, etapa de compilação, servidor de aplicação ou banco de
+dados. O navegador busca workouts.json e monta os cartões. Cada campo
+image aponta para images/<identificador>.svg.</p>
+<h3 id="dados-e-persistência">Dados e persistência</h3>
+<p>A chave localStorage “ricardo-rest” armazena o estado do descanso
+(end, remaining, total e paused). A chave “ricardo-done” armazena a data
+e os exercícios marcados como concluídos em cada dia; ela é descartada
+quando a data muda. Ambas ficam no navegador/dispositivo atual, sem
+sincronização entre aparelhos. O treino é arquivo estático compartilhado
+pela versão hospedada. O dia selecionado não é salvo.</p>
+<h3 id="funcionamento-sem-rede-e-atualizações">Funcionamento sem rede e
+atualizações</h3>
+<p>O service worker usa o cache “ricardo-workout-v4”. Na instalação,
+armazena a página, estilos, scripts, JSON, manifesto, ícones, fontes,
+fundo estrelado e imagens referenciadas. Nas consultas tenta primeiro a
+rede e usa cache se a requisição falhar. Uma resposta HTTP de erro não é
+tratada como falha de rede no código atual. O cache não é atualizado a
+cada consulta.</p>
+<p>O uso offline exige que a primeira visita e o cache tenham concluído
+com sucesso; autenticação da hospedagem e políticas do navegador podem
+interferir. Os caches anteriores com prefixo ricardo-workout- são
+apagados na ativação de uma nova versão. Ao alterar o conteúdo,
+incremente o identificador de cache em sw.js para renovar os arquivos
+offline.</p>
+<h2 id="executar-em-outro-computador">6. Executar em outro
+computador</h2>
+<ol type="1">
+<li>Extraia o ZIP mantendo as pastas.</li>
+<li>Instale Python 3, se ainda não estiver disponível.</li>
+<li>Abra um terminal na pasta Treino_Ricardo.</li>
+<li>Execute: <code>python -m http.server 8000 --directory app</code> (em
+alguns sistemas, use python3).</li>
+<li>Abra http://localhost:8000 no navegador.</li>
+<li>Para encerrar, pressione Ctrl+C no terminal.</li>
+</ol>
+<p>Evite abrir index.html diretamente por duplo clique: o carregamento
+de JSON e o service worker dependem de um servidor HTTP. Localhost
+permite testar o service worker; para acesso remoto e instalação,
+hospede com HTTPS. O servidor simples acima é para teste local.</p>
+<h2 id="editar-os-treinos">7. Editar os treinos</h2>
+<ol type="1">
+<li>Faça uma cópia do pacote antes de editar.</li>
+<li>Abra app/workouts.json em um editor de texto UTF-8.</li>
+<li>Preserve a lista de sete objetos, na ordem segunda a domingo.</li>
+<li>Edite name (dia), time (texto de duração), groups (título), note
+(aviso) e exercises (lista de exercícios).</li>
+<li>Para cada exercício, mantenha name, sets (texto), rest (número em
+segundos) e image (nome do SVG sem extensão).</li>
+<li>Mantenha sete exercícios por dia. Os três primeiros formam o bloco
+principal. O texto de groups deve seguir o formato “Grupo (3) + grupo
+(2) + grupo (2)”, pois o app usa esses números para dividir o dia em
+blocos.</li>
+<li>Se adicionar uma imagem, coloque o SVG em app/images e use seu nome
+exato no JSON. Para seguir o estilo atual, crie uma função ex_<nome>(s)
+em tools/gerar_ilustracoes.py (s = 0 início, s = 1 fim) e rode
+<code>python tools/gerar_ilustracoes.py &lt;nome&gt;</code>.</li>
+<li>Atualize também os textos gerais em index.html e no diálogo “Sobre
+este treino” em app.js se mudar duração, divisão ou séries.</li>
+<li>Incremente a versão do cache em app/sw.js.</li>
+<li>Execute <code>python verificar.py</code>, teste localmente e
+publique novamente.</li>
+</ol>
+<p>Exemplo de exercício:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;name&quot;</span><span class="fu">:</span><span class="st">&quot;Rosca Scott (máquina)&quot;</span><span class="fu">,</span><span class="dt">&quot;sets&quot;</span><span class="fu">:</span><span class="st">&quot;2 × 8–12&quot;</span><span class="fu">,</span><span class="dt">&quot;rest&quot;</span><span class="fu">:</span><span class="dv">90</span><span class="fu">,</span><span class="dt">&quot;image&quot;</span><span class="fu">:</span><span class="st">&quot;scott&quot;</span><span class="fu">}</span></span></code></pre></div>
+<p>As séries e repetições são textos exibidos; o app não calcula
+automaticamente volume ou duração ao alterá-los.</p>
+<h2 id="hospedar-e-transferir-para-outro-local">8. Hospedar e transferir
+para outro local</h2>
+<ol type="1">
+<li>Escolha uma hospedagem capaz de servir arquivos estáticos por
+HTTPS.</li>
+<li>Configure a pasta app como diretório publicado; o index.html deve
+ficar na raiz do endereço desejado.</li>
+<li>Publique todos os arquivos dessa pasta, mantendo images e os nomes
+relativos.</li>
+<li>Confira se workouts.json e os SVGs abrem sem erro e se o servidor
+entrega JS, JSON e manifesto com tipos adequados.</li>
+<li>Abra o site no celular e confira sete exercícios em cada um dos sete
+dias, imagens e cronômetro.</li>
+<li>Faça nova instalação na tela inicial usando o novo endereço.</li>
+</ol>
+<p>A cópia exportada não inclui contas, credenciais, permissões ou
+configuração de acesso da hospedagem atual. O endereço atual tem acesso
+restrito ao proprietário; compartilhar o ZIP permite hospedar uma cópia
+independente. Defina o acesso da nova hospedagem de acordo com o público
+pretendido. Preferir servir na raiz do domínio; revise start_url e scope
+do manifesto antes de usar subpastas.</p>
+<p>O estado do cronômetro do endereço anterior não é transferido
+automaticamente para outro domínio. Este ZIP inclui o código pronto para
+hospedagem, sem o histórico Git nem arquivos internos da plataforma.</p>
+<h2 id="relação-com-a-planilha">9. Relação com a planilha</h2>
+<p>A referência original é
+https://docs.google.com/spreadsheets/d/12pOSf6pDS6xS-zVxyb9iKxJ5Zc8l8yaNhZL8vbFMoYk/edit</p>
+<p>O app usa uma cópia estática dos dados; não consulta o Google Sheets.
+A revisão para sete exercícios foi aplicada ao app, e a planilha não foi
+atualizada nesta revisão. Para sincronizar manualmente, compare a
+planilha com workouts.json, faça a edição desejada e publique novamente.
+A planilha XLSX/Google Sheets e seu histórico não estão incluídos neste
+pacote.</p>
+<h2 id="verificações-e-limites-desta-entrega">10. Verificações e limites
+desta entrega</h2>
+<p>O pacote reproduz o commit de código citado no início. A rotina tem
+sete dias, 49 entradas de exercícios e todas as ilustrações
+referenciadas presentes. O verificador confere a estrutura do JSON,
+quantidade de exercícios e existência de arquivos essenciais e imagens.
+SHA256SUMS.txt registra a integridade dos arquivos incluídos, exceto ele
+próprio.</p>
+<p>O pacote reproduz o commit de código citado no início, com a revisão
+visual da seção 12 por cima. A rotina tem sete dias, 49 entradas de
+exercícios e todas as ilustrações referenciadas presentes. O verificador
+(<code>python verificar.py</code>) confere a estrutura do JSON, a soma
+dos números de cada título de dia, a validade do XML de todas as
+ilustrações, a existência de fontes, ícones e arquivos do cache offline.
+SHA256SUMS.txt registra a integridade dos arquivos incluídos, exceto ele
+próprio.</p>
+<p>Na revisão visual foram executados: o verificador; um teste de
+navegador automatizado (tools/teste_navegador.py) que percorre os sete
+dias em tela de computador e de celular, confere sete cartões por dia,
+imagens carregadas, ausência de rolagem horizontal e de erros de
+console, e testa marcação de concluídos, persistência após recarregar e
+cronômetro; e um teste com a rede desligada, que confirmou cartões,
+imagens e fontes servidos pelo cache. Os testes usaram Chromium com tela
+emulada. Não houve teste em iPhone ou Android reais, nem comparação das
+ilustrações com um profissional de educação física: elas são
+esquemáticas.</p>
+<h2 id="continuação-do-projeto-em-outra-conversa-ou-com-desenvolvedor">11.
+Continuação do projeto em outra conversa ou com desenvolvedor</h2>
+<p>Envie o ZIP e indique: “Abra LEIA-ME.md e DOCUMENTACAO_COMPLETA.md.
+Este é o app Treino Ricardo, com sete exercícios por dia (3 + 2 + 2),
+HTML/CSS/JS estáticos, dados em workouts.json, imagens SVG e cronômetro
+local. Preserve a rotina documentada e implemente as alterações que eu
+solicitar. A planilha não sincroniza automaticamente.”</p>
+<p>O arquivo DOCUMENTACAO_COMPLETA.html contém o mesmo manual para
+leitura no navegador e impressão. O Markdown é a versão de texto
+editável.</p>
+<h2 id="revisão-visual-de-10112026">12. Revisão visual de
+10/11/2026</h2>
+<h3 id="o-que-mudou">O que mudou</h3>
+<ul>
+<li>Tema galáctico: fundo índigo com brilho de nebulosa e estrelas,
+violeta como cor de ação, lavanda para textos secundários e um toque de
+champanhe nos detalhes finos (dia selecionado, hairlines, concluídos,
+cronômetro).</li>
+<li>Layout de sistema: barra lateral com a semana como constelação no
+computador; faixa de estrelas no topo no celular; título do dia, resumo
+(duração, exercícios, séries), anel de progresso, estrutura da sessão
+(aquecimento, exercícios, volta à calma) e cartões agrupados por
+bloco.</li>
+<li>Ilustrações sempre visíveis no cartão (antes ficavam recolhidas),
+com legendas “Início” e “Movimento” (“Posição” e “Sustente” na prancha e
+na prancha lateral).</li>
+<li>Novidade funcional: botão de check por exercício e anel de progresso
+do dia.</li>
+<li>Tipografia: Cormorant Garamond (títulos e números, algarismos
+alinhados) e Manrope (interface), servidas localmente.</li>
+<li>Cronômetro com barra de tempo restante; ícones e manifesto no novo
+tema; cache offline v4.</li>
+</ul>
+<h3 id="paleta-e-tipografia">Paleta e tipografia</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Valor</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vácuo</td>
+<td>#0f0826</td>
+<td>Fundo da página</td>
+</tr>
+<tr class="even">
+<td>Nebulosa</td>
+<td>#1a1040 / #241657</td>
+<td>Superfícies e cartões</td>
+</tr>
+<tr class="odd">
+<td>Violeta estelar</td>
+<td>#8b5cf6 / #b9a6ff</td>
+<td>Ações, destaques, linhas</td>
+</tr>
+<tr class="even">
+<td>Lavanda</td>
+<td>#efeaff / #a69ed2</td>
+<td>Texto principal e secundário</td>
+</tr>
+<tr class="odd">
+<td>Champanhe</td>
+<td>#f2cf8a</td>
+<td>Detalhes finos, selecionado e concluído</td>
+</tr>
+</tbody>
+</table>
+<p>Os valores estão como variáveis no início de app/style.css
+(<code>--void</code>, <code>--nebula</code>, <code>--violet</code>,
+<code>--gold</code> e demais). Para ajustar a paleta, altere essas
+variáveis e, se quiser, as cores em tools/rig.py (ilustrações) e
+tools/gerar_assets.py (ícone e fundo).</p>
+<h3 id="como-as-ilustrações-são-feitas">Como as ilustrações são
+feitas</h3>
+<p>Cada figura usa um esqueleto com ossos de tamanho fixo (tronco, coxa,
+canela, braço, antebraço). Os membros que tocam um aparelho usam
+cinemática inversa, então o pé ou a mão ficam sempre no ponto certo. O
+músculo trabalhado aparece com brilho dourado e rosado. Cada exercício é
+uma função com dois estados (início e fim) em
+tools/gerar_ilustracoes.py. Para regenerar todas:
+<code>python tools/gerar_ilustracoes.py</code>. Para uma só:
+<code>python tools/gerar_ilustracoes.py press</code>. Os ícones e o
+fundo estrelado são regenerados com
+<code>python tools/gerar_assets.py</code> (os PNGs exigem
+Playwright).</p>
+<h3 id="limites-conhecidos">Limites conhecidos</h3>
+<ul>
+<li>As figuras são esquemáticas, em perfil ou de frente, e simplificam
+equipamentos. Servem como lembrete do movimento, não como instrução
+técnica de execução.</li>
+<li>A planilha continua sem sincronização automática com o app.</li>
+<li>O serviço de cache continua tratando resposta HTTP de erro como
+resposta válida (comportamento herdado, não alterado nesta
+revisão).</li>
+<li>Não há aviso sonoro nem vibração no fim do descanso.</li>
+</ul>
+</body>
+</html>

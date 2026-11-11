@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#140b33">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meu treino">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Treino Ricardo</title>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <a class="brand" href="./">
+      <img class="brand-icon" src="icon.svg" alt="" width="40" height="40">
+      <span class="brand-text"><strong>Treino Ricardo</strong><small>Rotina semanal</small></span>
+    </a>
+    <nav id="days" class="week" aria-label="Dias de treino"></nav>
+    <div class="side-actions">
+      <button id="install" type="button" aria-label="Como instalar no celular">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span class="t">Como instalar</span>
+      </button>
+      <button id="about" type="button" aria-label="Sobre este treino">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8v.01"/></svg><span class="t">Sobre este treino</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div class="hero-text">
+        <p class="hero-day" id="day-label"></p>
+        <h1 id="day-title">Treino</h1>
+        <p class="hero-sub" id="day-sub"></p>
+      </div>
+      <div class="progress" id="progress" role="img" aria-label="Progresso da sessão"></div>
+    </header>
+
+    <ul class="chips" id="chips" aria-label="Resumo da sessão"></ul>
+    <p id="note" class="note" hidden></p>
+
+    <div class="phases" aria-label="Estrutura da sessão">
+      <div class="phase p-warm"><span>Aquecimento</span><small>8 min</small></div>
+      <div class="phase p-main"><span>Exercícios</span><small>42–47 min</small></div>
+      <div class="phase p-cool"><span>Volta à calma</span><small>até 5 min</small></div>
+    </div>
+
+    <div id="exercises" class="blocks"></div>
+
+    <footer class="foot"><p>Feito para acompanhar você.</p></footer>
+  </main>
+</div>
+
+<aside id="timer" class="timer" hidden aria-label="Cronômetro de descanso">
+  <div class="timer-read"><small id="timer-label">Descanso</small><strong id="clock" role="timer">01:00</strong></div>
+  <div class="timer-bar" aria-hidden="true"><i id="timer-fill"></i></div>
+  <button id="pause" type="button">Pausar</button>
+  <button id="close-timer" type="button" aria-label="Encerrar descanso">✕</button>
+</aside>
+
+<dialog id="info"><button id="close-info" type="button" aria-label="Fechar" class="close">✕</button><div id="info-body"></div></dialog>
+<script type="module" src="app.js"></script>
+</body>
+</html>
